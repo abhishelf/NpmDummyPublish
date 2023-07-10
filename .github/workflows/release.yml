@@ -5,13 +5,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 12.x
-        registry-url: 'https://registry.npmjs.org'
-    - run: |
-        TEMP_VER: ${{npm pkg get version}}
-        SERVER_VERSION: ${{npm info react-native-sample-toast-button version}}
-        CURRENT_VERSION: ${{node -p "require('./package.json').version"}}
-        echo "S $SERVER_VERSION and C $CURRENT_VERSION T $TEMP_VER"
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 12.x
+          registry-url: 'https://registry.npmjs.org'
+      - run: |
+          TEMP_VER: ${{npm pkg get version}}
+          SERVER_VERSION: ${{npm info react-native-sample-toast-button version}}
+          CURRENT_VERSION: ${{node -p "require('./package.json').version"}}
+          echo "S $SERVER_VERSION and C $CURRENT_VERSION T $TEMP_VER"
