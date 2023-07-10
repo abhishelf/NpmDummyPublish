@@ -22,3 +22,5 @@ jobs:
           else
             echo "Publishing Not Required"
           fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
