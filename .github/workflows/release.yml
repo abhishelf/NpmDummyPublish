@@ -10,7 +10,9 @@ jobs:
       with:
         node-version: 12.x
         registry-url: 'https://registry.npmjs.org'
-    - run: echo "S = $SERVER_VERSION and C = CURRENT_VERSION"
+    - run: echo "S $SERVER_VERSION and C $CURRENT_VERSION"
       env:
         SERVER_VERSION: npm info react-native-sample-toast-button version
         CURRENT_VERSION: node -p "require('./package.json').version"
+    - run: npm info react-native-sample-toast-button version
+    - run: node -p "require('./package.json').version"
