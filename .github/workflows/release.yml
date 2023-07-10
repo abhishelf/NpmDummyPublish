@@ -11,7 +11,5 @@ jobs:
           node-version: 12.x
           registry-url: 'https://registry.npmjs.org'
       - run: |
-          TEMP_VER: ${{npm pkg get version}}
-          SERVER_VERSION: ${{npm info react-native-sample-toast-button version}}
           CURRENT_VERSION: ${{node -p "require('./package.json').version"}}
           echo "S $SERVER_VERSION and C $CURRENT_VERSION T $TEMP_VER"
