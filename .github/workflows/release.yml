@@ -12,7 +12,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: "Set Version for Package"
         run: |
-          if ${(npm pkg get version)} != $(npm info react-native-sample-toast-button version); then
+          if $(npm pkg get version) != $(npm info react-native-sample-toast-button version); then
             echo "Required Publishing"
           else
             echo "Publishing Not Required"
