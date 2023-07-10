@@ -1,7 +1,10 @@
-name: publish to npm
-on: 
-  release: 
-    types: [created]
+name: test workflow
+on: [workflow_dispatch]
+    
+env:
+  SERVER_VERSION: npm info react-native-sample-toast-button version
+  CURRENT_VERSION: node -p "require('./package.json').version"
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,7 +14,4 @@ jobs:
       with:
         node-version: 12.x
         registry-url: 'https://registry.npmjs.org'
-    - run: npm ci
-    - run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - run: echo "S = $SERVER_VERSION and C = CURRENT_VERSION"
