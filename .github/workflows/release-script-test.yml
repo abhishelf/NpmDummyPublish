@@ -11,7 +11,7 @@ jobs:
           node-version: 19.7.0
           registry-url: 'https://registry.npmjs.org'
       - name: "Check Publishing Required or Not"
-        if: $(node -p "require('./package.json').version") != $(npm info react-native-sample-toast-button version)
+        if: ${{$(node -p "require('./package.json').version") != $(npm info react-native-sample-toast-button version)}} 
         run: |
           echo "Local Version $(node -p "require('./package.json').version")"
           echo "Server Version $(npm info react-native-sample-toast-button version)"
