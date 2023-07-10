@@ -10,14 +10,12 @@ jobs:
         with:
           node-version: 12.x
           registry-url: 'https://registry.npmjs.org'
-      - name: "Set flag from Commit"
+      - name: "Set Version for Package"
         env:
-          COMMIT_VAR: ${{ contains(github.event.head_commit.message, '[commit var]') }}
+          NPM_PKG_VER: ${{ npm pkg get version }}
+          SERVER_VER: $${{ npm info react-native-sample-toast-button version }}
+          NODE_PKG_VER: ${{ node -p "require('./package.json').version" }}
         run: |
-          if ${COMMIT_VAR} == true; then
-            echo "flag=true" >> $GITHUB_ENV
-            echo "flag set to true"
-          else
-            echo "flag=false" >> $GITHUB_ENV
-            echo "flag set to false"
-          fi
+          echo $NPM_PKG_VER
+          echo $SERVER_VER
+          echo $NODE_PKG_VER
