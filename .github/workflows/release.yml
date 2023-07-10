@@ -11,11 +11,10 @@ jobs:
           node-version: 19.7.0
           registry-url: 'https://registry.npmjs.org'
       - name: "Set Version for Package"
-        env:
+        run: |
           NPM_PKG_VER: "$(npm pkg get version)"
           SERVER_VER: "$(npm info react-native-sample-toast-button version)"
           NODE_PKG_VER: $(node -p "require('./package.json').version")
-        run: |
           echo $(npm pkg get version)
           echo $NPM_PKG_VER
           echo $SERVER_VER
