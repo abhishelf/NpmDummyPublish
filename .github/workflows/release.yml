@@ -13,7 +13,7 @@ jobs:
       - name: "Set Version for Package"
         env:
           NPM_PKG_VER: ${{ npm pkg get version }}
-          SERVER_VER: $${{ npm info react-native-sample-toast-button version }}
+          SERVER_VER: ${{ npm info react-native-sample-toast-button version }}
           NODE_PKG_VER: ${{ node -p "require('./package.json').version" }}
         run: |
           echo $NPM_PKG_VER
