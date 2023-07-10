@@ -1,4 +1,4 @@
-name: test workflow
+name: Test Workflow
 on: [workflow_dispatch]
   
 jobs:
@@ -10,7 +10,7 @@ jobs:
         with:
           node-version: 19.7.0
           registry-url: 'https://registry.npmjs.org'
-      - name: "Set Version for Package"
+      - name: "Check Publishing Required or Not"
         run: |
           if $(npm pkg get version) != $(npm info react-native-sample-toast-button version); then
             echo "Required Publishing"
