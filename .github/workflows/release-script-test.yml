@@ -14,7 +14,7 @@ jobs:
         run: |
           echo "Local Version $(node -p "require('./package.json').version")"
           echo "Server Version $(npm info react-native-sample-toast-button version)"
-          if ${{$(node -p "require('./package.json').version") != $(npm info react-native-sample-toast-button version)}}; then
+          if: ${{$(node -p "require('./package.json').version") != $(npm info react-native-sample-toast-button version)}}; then
             echo "Required Publishing"
           else
             echo "Publishing Not Required"
