@@ -1,6 +1,6 @@
 {
   "name": "react-native-sample-toast-button",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Test Plugin",
   "main": "src/index.ts",
   "keywords": [
