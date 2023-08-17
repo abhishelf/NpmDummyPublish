@@ -29,7 +29,7 @@ jobs:
           git status
           masterCommitId=$(git rev-parse main)
           echo "Master Commit Id ${masterCommitId}"
-          git merge temp 
+          git merge origin/temp
       - run: npm install
       # - run: npm publish
       #   env:
