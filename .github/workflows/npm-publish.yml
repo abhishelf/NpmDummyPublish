@@ -27,7 +27,7 @@ jobs:
           git --version
           git fetch
           git status
-          masterCommitId=$(git rev-parse master)
+          masterCommitId=$(git rev-parse main)
           echo "Master Commit Id ${masterCommitId}"
       - run: npm install
       # - run: npm publish
