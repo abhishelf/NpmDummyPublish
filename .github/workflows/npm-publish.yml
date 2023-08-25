@@ -29,6 +29,7 @@ jobs:
           git config --local user.name "Github Actions"
       - name: Merge Brach
         run: |
+          git fetch origin
           git checkout temp
           git checkout master
           git merge temp
