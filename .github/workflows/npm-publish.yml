@@ -31,7 +31,7 @@ jobs:
         run: |
           git fetch origin
           git checkout temp
-          git checkout master
+          git checkout main
           git merge temp
       # git merge origin/temp --allow-unrelated-histories
       # - run: npm install
