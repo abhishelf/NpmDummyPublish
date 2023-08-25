@@ -29,10 +29,10 @@ jobs:
           git config --local user.name "Github Actions"
       - name: Merge Brach
         run: |
-          git checkout temp
-          git merge master
-          git checkout master
-          git merge temp
+          git checkout origin/temp
+          git merge orign/master
+          git checkout orign/master
+          git merge orign/temp
       # git merge origin/temp --allow-unrelated-histories
       # - run: npm install
       # - run: npm publish
