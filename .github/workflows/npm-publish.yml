@@ -32,7 +32,7 @@ jobs:
           git fetch origin
           git checkout merge_test
           git checkout main
-          git merge origin/merge_test
+          git merge origin/merge_test --allow-unrelated-histories
           git push origin
       # git merge origin/temp --allow-unrelated-histories
       # - run: npm install
