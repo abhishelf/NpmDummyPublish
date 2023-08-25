@@ -23,14 +23,14 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: |
-          git --version
-          git fetch
-          git status
-          masterCommitId=$(git rev-parse main)
-          echo "Master Commit Id ${masterCommitId}"
+      - name: Set Git config
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Github Actions"
+      - name: Merge Brach
+        run: |
           git merge origin/temp --allow-unrelated-histories
-      - run: npm install
+      # - run: npm install
       # - run: npm publish
       #   env:
       #     NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
