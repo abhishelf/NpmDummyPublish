@@ -32,7 +32,9 @@ jobs:
           git fetch origin
           git checkout merge_test
           git checkout main
-          git merge origin/merge_test --allow-unrelated-histories
+          touch temp.txt
+          git add temp.txt
+          git commit -m "Added Temp File"
           git push origin
       # git merge origin/temp --allow-unrelated-histories
       # - run: npm install
