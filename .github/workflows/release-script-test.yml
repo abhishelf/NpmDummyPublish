@@ -12,13 +12,14 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: "Check Publishing Required or Not"
         run: |
+          echo "${{secrets.NPM_TOKEN}}"
           cd plugin
           echo "Local Version $(node -p "require('./package.json').version")"
           echo "Server Version $(npm info react-native-sample-toast-button version)"
           if [ "$(node -p "require('./package.json').version")" != "$(npm info react-native-sample-toast-button version)" ]; then
             echo "Required Publishing"
             npm install
-            npm publish
+            # npm publish
           else
             echo "Publishing Not Required"
           fi
